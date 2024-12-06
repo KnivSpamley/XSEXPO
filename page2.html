@@ -1,74 +1,263 @@
 <!DOCTYPE html>
-<html> <!---->
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8" />
     <title>XS19 News - Official</title>
-  </head>
-<link rel="stylesheet" type="text/css" href="style2.css" />
-  <body style="background-color: darkslateblue; color: lightgrey">
-    <div
-      class="page"
-    >
-      <header>
-        <h1 style="text-align: center; color: red">
-          XSCeon 2019 Updates
-        </h1>
-        <h4 style="margin: auto; text-align: center;">
-          <form action="index.html" method="get">
-            <button class="button button1" type="submit"     onclick="myFunction()">
-              <b>Home Page</b>
-            </button>
-          </form>
-        </h4>
-      </header>
-      <hr/>
-      <!-- <Button Layout> -->
-<section>
-        <h2 style="text-align: center; color: salmon">Season 9 Releases!</h2>
-        <p style="text-align: center;">With a map size of over <i>1GB</i> and around <i>200 hours</i> of gametime, the XS team is proud to announce Season 9 of XS-19. </p>
-  <p><b>What's new? </b>Season 9 presents a cleaner map than before, fixed major bugs, and reinstatement of many new mods. Season 9 does NOT feature a reset of the End, but plans for a complete overhaul will be present in Season 10.</p>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #1a1a2e;
+            --bg-medium: #16213e;
+            --bg-light: #0f3460;
+            --text-primary: #e5e5e5;
+            --text-secondary: #f1f1f1;
+            --accent-color: #e94560;
+            --hover-color: #0d7377;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color 0.3s ease;
+        }
+
+        .page {
+            width: 90%; 
+            margin: 2rem auto; 
+            background-color: var(--bg-medium);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease-out;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #53a8b6;
+            margin: 1.5rem 0 1rem;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        li {
+            background-color: rgba(0,0,0,0.3);
+            margin: 0.5rem 0;
+            padding: 0.75rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        li:hover {
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background-color: var(--accent-color);
+            margin: 1.5rem 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--hover-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .button:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--hover-color);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <h1>XSCeon 2019 Updates</h1>
+            <form action="index.html" method="get">
+                <button class="button" type="submit" onclick="myFunction()">
+                    Home Page
+                </button>
+            </form>
+        </header>
+
+        <section>
+            <h2>Season 10 Release - Due 12/10</h2>
+            <p><b>What's new?</b> Season 10 presents more optimizations, plugin reductions and updates, and an official update to Minecraft v1.21.3. We're featuring this with our 1000MC day/330+ 
+            hours; the XS council spreads their thanks to all former and current players for contributing to XS. </p>
+        </section>
+
+        <section>
+            <h2>Current Server State</h2>
+            <p>XS19 is now more optimized than ever; we've managed to scale corrupted chunks in the end (previous: 30% corruption) to a scale of >5%. If you notice sectors in your
+              world are being corrupted or have data-mishaps, please notify us prior to the season release (12/10). </p>
+              
+            <p>Our current corruption rates are as follows:</p>
+            <ul>
+              <li>End: >5%</li>
+              <li>Nether: >2%</li>
+              <li>Overworld: >5%</li>
+            </ul>
+            <p>We are no longer providing chunk numbers generated for this season.</p>
+            <p>*Corruption rates are based on the entirety of Season 9 (~8 months)</p>
+        </section>
+
+        <section>
+            <h2>Past Season Changelogs (S6 onwards):</h2>
+            <ul>
+                <li><b>12/10/22: Season 6.0 Releases</b> - Server optimizations, view count increase to 6 (+2), anticheat testing, updated to Minecraft Paper Version 1.19.1</li>
+                <li><b>7/15/23: Season 7.0 Releases</b> - Server optimizations, view count increase to 8 (+2), minor anticheats installed, updated to Minecraft Paper Version 1.20.1</li>
+                <li><b>11/8/23: Season 8.0 Release</b> - Server optimizations, bug fixed for tick timing. Server version still 1.20.1</li>
+                <li><b>3/11/24: Season 9.0 Releases</b> - Server optimizations, bug fixes, chunk stability checks, removed anticheats and added more plugins</li>
+            </ul>
+        </section>
+        <section>
+          <h2>Permitted Plugins</h2>
+          <p>The following plugins are currently permitted on the client-end basis (Fabric-Only, install FabricAPI prior):</p>
+          <ul>
+              <li><b>Sodium & Lithium</b> - Optifine is no longer permitted; you must have Sodium installed. These are optimization mods</li>
+              <li><b>Xaero's Minimap</b> - A minimap that shows what the world looks like around you, with waypoint support</li>
+              <li><b>DynamicFPS, Entity Culling, Mod Menu, ImmediatelyFast, FerriteCore</b> - Additional optimization mods</li>
+            </ul>
+          <p>These plugins are selected to provide the best possible experience while ensuring fair play and server stability. When playing on this server,
+            you are not allowed to use any Minecraft clients other than PrismMC, Modrinth, or the official Minecraft Launcher. Lunar, Badlion, and other clients are not permitted.
+            For additional plugins, please contact the XS council. You must use the default Minecraft textures. You may be randomly checked for compliance; failure to comply will result in a ban.
+          </p>
       </section>
-     </hr>
-<section>
-        <h2 style="text-align: center; color: salmon">Current Server State</h2>
-        <p>As of right now, XS-2019 is highly optimized and more bug free than Season 8's release. We're hoping to move to a higher end server host in a couple months for more flexibility. 
-        </p>
-  <ul>
-<li>Approximatly 210 Overworld chunks have been generated with 9 total chunks being deleted (5% Corruption Rate)</li>
-<li>Around 70 End chunks have been generated with ~30 chunks corrupted (~40% corruption rate). As of right now, the End will no longer be optimized with a possible reset next season.</li>
-<li>Around 22 Nether chunks have been generated, none have ever been corrupted (0% Corruption rate)</li>
-</ul>
-  <p>*Corruption rates are based on the entirety of Season 8 (~6 months)</p>
-      </section>
-      <hr/>
-<section>
-        <h2 style="text-align: center; color: darkseagreen">Season 8 Changelog</h2>
-    <ul>
-<li><b>7/15/23: Season 7.0 Releases</b> - Server optimizations, view count increase to 8 (+2), minor anticheats installed, updated to Minecraft Paper Version 1.20.1</li>
-<li><b>11/8/23: Season 8.0 Release</b> - Server optimizations, bug fixed for tick timing. Server version still 1.20.1</li>
-      
-</ul>
-      </section>
-    <hr/>
-      <section>
-        <h2 style="text-align: center; color: darkblue">Crate Drops! </h2>
-        <p>Season 8 has less updates to the server as a whole, but new armor crate sets will be dropping! Our current drops:</p>
-<ul>
-  <li>
-    <b>Kronos Set</b> - Featuring Protection 5 Armor, and a powerful set of tools
-  </li>
-  <li>
-    <b>Tartarus Set</b> - Protection 10 Armor with the rarest trims, even more godly set of tools, and the life/death potions.
-  </li>
-  <li><b>NEW: Skylivier Set</b> - Rare blue trimmed Protection 4 Armor with feather falling 8 boots and a Punch 3 Bow with Power 6 and Flame 3.</li>
-  <li><b>NEW: Arthier Set</b> - Rare orange trimmed armor with Flame Protection 5 and Blast resistance 5. An axe includes Fire Aspect 5, Sharpness 5, and efficiency 5. A pickaxe includes sharpness 5 and efficiency 8. </li>
-</ul>
-        <p>The Kronos Set and Tartarus Set have been both found by faction Vexian. The Tartarus set is currently the most advanced set to release with maximum protection meant to destroy enemies. The new Skylivier set (sky-live-ier) is meant to be the ultimate set for taking control of the skies. The Arthier set (arth-i-er) is the ultimate nether domination set. </p>
-      </section>      
-      <hr/>      
-        <p><em>&copy;2022-24 Ness Je'y Leickons (Knivier) x Leo Je'y Leickons</em></p>
-      </footer>
+        <section>
+            <h2>Crate Drops - Coming Soon!</h2>
+            <p>Season 10 will drop various special edition weapons that relate to the history of the server (in shulkers as always). The XS clan will not be permitted to claim any crates due to their monopoly on previous crates.
+               Our crates as follows below: </p>
+            <ul>
+              <li>
+                <b>Kronos Set</b> - Featuring Protection 5 Armor, and a powerful set of tools
+              </li>
+              <li>
+                <b>Tartarus Set</b> - Protection 10 Armor with the rarest trims, even more godly set of tools, and the life/death potions.
+              </li>
+              <li><b>Yet to Drop (Season 9): Skylivier Set</b> - Rare blue trimmed Protection 4 Armor with feather falling 8 boots and a Punch 3 Bow with Power 6 and Flame 3.</li>
+              <li><b>Yet to Drop (Season 9): Arthier Set</b> - Rare orange trimmed armor with Flame Protection 5 and Blast resistance 5. An axe includes Fire Aspect 5, Sharpness 5, and efficiency 5. A pickaxe includes sharpness 5 and efficiency 8. </li>
+            </ul>
+        </section>
+
+        <footer>
+            <p><em>&copy;2024 Knivier</em></p>
+        </footer>
     </div>
-    <hr/>
-  </body>
+
+    <script>
+        function myFunction() {
+            // Optional: Add any additional functionality for the home page button
+            console.log('Navigating to home page');
+        }
+
+        // Optional subtle animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    section.style.transition = 'all 0.8s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, 300 * (index + 1));
+            });
+        });
+    </script>
+</body>
 </html>
