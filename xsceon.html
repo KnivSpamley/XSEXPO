@@ -232,6 +232,91 @@
               <li><b>Yet to Drop (Season 9): Arthier Set</b> - Rare orange trimmed armor with Flame Protection 5 and Blast resistance 5. An axe includes Fire Aspect 5, Sharpness 5, and efficiency 5. A pickaxe includes sharpness 5 and efficiency 8. </li>
             </ul>
         </section>
+        
+        <section>
+            <h2>XS Timeline</h2>
+            <style>
+            .timeline-container {
+                position: relative;
+                width: 100%;
+                max-width: 1000px;
+                margin: 0 auto;
+                overflow: hidden;
+                cursor: pointer;
+            }
+
+            .timeline-image {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                transition: all 0.3s ease;
+            }
+
+            .expanded-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                z-index: 1000;
+                cursor: pointer;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .expanded-image {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0.5);
+                max-width: 90vw;
+                max-height: 90vh;
+                z-index: 1001;
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+            .expanded-overlay.active {
+                opacity: 1;
+            }
+
+            .expanded-image.active {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            </style>
+            <div class="timeline-container">
+            <img src="timelinexs.png" alt="XS Timeline" class="timeline-image">
+            </div>
+            <div class="expanded-overlay">
+            <img src="timelinexs.png" alt="XS Timeline" class="expanded-image">
+            </div>
+
+            <script>
+            const container = document.querySelector('.timeline-container');
+            const overlay = document.querySelector('.expanded-overlay');
+            const expandedImg = document.querySelector('.expanded-image');
+
+            container.addEventListener('click', () => {
+                overlay.style.display = 'block';
+                setTimeout(() => {
+                overlay.classList.add('active');
+                expandedImg.classList.add('active');
+                }, 10);
+            });
+
+            overlay.addEventListener('click', () => {
+                overlay.classList.remove('active');
+                expandedImg.classList.remove('active');
+                setTimeout(() => {
+                overlay.style.display = 'none';
+                }, 300);
+            });
+            </script>
+        </section>
+
 
         <footer>
             <p><em>&copy;2024 Knivier</em></p>
